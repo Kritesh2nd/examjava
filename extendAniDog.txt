@@ -1,0 +1,21 @@
+//Animal.java
+package javaapplication4;
+public class Animal extends Dog{
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        a.add();
+        a.Dogg();
+    }
+}
+
+
+//Dog.java
+package javaapplication4;
+public class Dog {
+    void Dogg(){
+        System.out.println("Hello Dog");
+    }
+    void add(){
+        System.out.println("this is add");
+    }
+}

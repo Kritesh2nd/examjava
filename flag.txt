@@ -1,0 +1,35 @@
+package javaapplication4;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+public class FlagNepal extends Canvas{
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Nepal Flag");
+        Canvas canvas = new FlagNepal();
+        canvas.setSize(300, 500);
+        frame.add(canvas);
+        frame.pack();
+        frame.setVisible(true);
+        System.out.println("hii");
+    }
+    @Override
+    public void paint(Graphics g1) {
+        int x[]={50,180,80,210,50};
+        int y[]={50,150,150,250,250};
+        int x1[]={40,210,110,240,40};
+        int y1[]={30,160,160,260,260};
+        g1.setColor(Color.blue);
+        g1.fillPolygon(x1, y1, 5);
+        g1.setColor(Color.red);
+        g1.fillPolygon(x, y, 5);
+        g1.setColor(Color.white);
+        g1.fillOval(70,95,40,40);
+        g1.setColor(Color.red);
+        g1.fillOval(70,85,40,40);
+        g1.setColor(Color.white);
+        g1.fillOval(70,190,40,40);
+        g1.setColor(Color.black);
+        g1.fillRect(40,260,10,130);
+    }
+}

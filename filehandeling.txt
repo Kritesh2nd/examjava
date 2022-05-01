@@ -1,0 +1,45 @@
+package filehandeling;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.io.*;
+public class file01 {
+    public static void main(String[] args) throws IOException {
+        //creating file
+        File fileA = new File("File01.txt");
+        fileA.createNewFile();
+        //writing in file
+        FileWriter fileB = new FileWriter("File01.txt");
+        fileB.write("My name is Kritesh Thapa\n");
+        fileB.close();
+        //reading from file
+        Scanner fileC = new Scanner(fileA);
+        while(fileC.hasNextLine()){
+            String data = fileC.nextLine();
+            System.out.println(""+data);            
+        }
+        //Appending
+        FileWriter fileD = null;
+        BufferedWriter fileD1 = null;
+        PrintWriter fileD2 = null;
+        fileD = new FileWriter("File01.txt", true);
+        fileD1 = new BufferedWriter(fileD);
+        fileD2 = new PrintWriter(fileD1);
+        fileD2.println("I am 19 years old.");
+        fileD2.close();
+        fileD1.close();
+        fileD.close();
+        //Again reading the file
+        File fileE1 = new File("File01.txt");
+        Scanner fileE = new Scanner(fileE1);
+        while(fileE.hasNextLine()){
+            String data = fileE.nextLine();
+            System.out.println(""+data);            
+        }
+        //deleting file
+        File fileF = new File("File01.txt");
+        fileF.delete();
+        System.out.println(fileF.getName()+" is deleted.");
+    }
+}
